@@ -20,6 +20,7 @@ $(() => {
       </nav>
       `
     } else {
+      console.log(user);
       userLinks = `
       <nav id="page-header__user-links" class="page-header__user-links">
         <ul>
@@ -42,6 +43,7 @@ $(() => {
 
   getMyDetails()
     .then(function( json ) {
+      console.log(json);
     updateHeader(json.user);
   });
 

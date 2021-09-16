@@ -36,7 +36,7 @@ const getUserWithId = function(id) {
   return pool
   .query(`SELECT * FROM users WHERE id = $1`, [id])
   .then((result) => {
-    return(result.rows);
+    return(result.rows[0]);
   })
   .catch((err) => console.log(err.message));
 }
@@ -86,7 +86,6 @@ exports.getAllReservations = getAllReservations;
 const getAllProperties = function(options, limit = 10) {
   //create empty array to house the optional params passed in
   const queryParams = [];
-  console.log(options);
 
   //start query string with the query you will absolutely need
   let queryString = `SELECT properties.*, AVG(property_reviews.rating) as average_rating 
@@ -97,9 +96,9 @@ const getAllProperties = function(options, limit = 10) {
 
   if(options.city) {
     //add query param to arr
-    queryParams.push(`%${options.city}%`);
+    queryParams.push(`%${options.city.toLowerCase()}%`);
     //add to sql query. Include $n based on where param is in the query param arr
-    queryString += `AND city LIKE $${queryParams.length} `;
+    queryString += `AND LOWER(city) LIKE $${queryParams.length} `
   }
   if(options.minimum_price_per_night) {
     queryParams.push(`${options.minimum_price_per_night}00`);
