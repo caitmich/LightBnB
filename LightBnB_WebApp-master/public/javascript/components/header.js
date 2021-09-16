@@ -12,10 +12,10 @@ $(() => {
       userLinks = `
       <nav id="page-header__user-links" class="page-header__user-links">
         <ul>
-          <li class="home">🏠</li>
-          <li class="search_button">Search</li>
-          <li class="login_button">Log In</li>
-          <li class="sign-up_button">Sign Up</li>
+          <li class="home" style="font-size:3em;">🏠</li>
+          <li class="search_button" style="font-size:1.5em;">Search</li>
+          <li class="login_button" style="font-size:1.5em;">Log In</li>
+          <li class="sign-up_button" style="font-size:1.5em;">Sign Up</li>
         </ul>
       </nav>
       `
@@ -24,13 +24,13 @@ $(() => {
       userLinks = `
       <nav id="page-header__user-links" class="page-header__user-links">
         <ul>
-          <li class="home">🏠</li>
-          <li class="search_button">Search</li>
-          <li>${user.name}</li>
-          <li class="create_listing_button">Create Listing</li>
-          <li class="my_listing_button">My Listings</li>
-          <li class="my_reservations_button">My Reservations</li>
-          <li class="logout_button">Log Out</li>
+          <li class="home" style="font-size:3em;">🏠</li>
+          <li class="search_button" style="font-size:1.5em;">Search</li>
+          <li style="font-size:1.5em;">${user.name}</li>
+          <li class="create_listing_button" style="font-size:1.5em;">Create Listing</li>
+          <li class="my_listing_button" style="font-size:1.5em;">My Listings</li>
+          <li class="my_reservations_button" style="font-size:1.5em;">My Reservations</li>
+          <li class="logout_button" style="font-size:1.5em;">Log Out</li>
         </ul>
       </nav>
       `
